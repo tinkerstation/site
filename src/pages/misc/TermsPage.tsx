@@ -8,7 +8,7 @@ const TermsAndConditions: React.FC = () => {
     const { Language } = useLanguageContext();
 
     return (
-        <Container component="main" maxWidth="md">
+        <Container component="main" maxWidth="md" style={{ padding: '20px' }}>
             <Paper elevation={3} style={{ padding: '20px' }}>
                 <Typography variant="h4" gutterBottom>
                     {getTranslation(Language.code, 'termsAndConditions.title')}

@@ -1,8 +1,6 @@
 import React from 'react';
 import {
-    styled,
     Typography,
-    Grid,
     Container
 } from '@mui/material';
 import background from "/homedesign.jpg";

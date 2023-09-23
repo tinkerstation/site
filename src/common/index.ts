@@ -7,6 +7,9 @@ import de from './locales/de.json';
 export const lightTheme = createTheme({
   palette: {
     mode: 'light',
+    background: {
+      default: "#ffffff",
+    },
     primary: {
       main: '#3f50b5',
     },
@@ -39,6 +42,9 @@ export const lightTheme = createTheme({
 export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
+    background: {
+      default: "#121212",
+    },
     primary: {
       main: '#bb86fc', // Example color for dark theme
     },

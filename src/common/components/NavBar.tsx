@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useThemeContext } from '../contexts/ThemeContext';
 import { useLanguageContext } from '../contexts/LangContext';
 import ConsentModal from './ConsentModal';
-import { getTranslation, languages } from '..';
+import { darkTheme, getTranslation, languages, lightTheme } from '..';
 import {
   Button,
   Drawer,
@@ -24,6 +24,7 @@ import {
 import { GiHamburgerMenu } from "react-icons/gi";
 import { DarkMode, LightMode } from '@mui/icons-material';
 import { convertPathString } from '../index';
+import { Helmet } from 'react-helmet';
 
 const HamMenu = styled(GiHamburgerMenu)(({ theme }) => ({
   color: theme.palette.text.primary,
@@ -55,6 +56,7 @@ export const NavBar: React.FC = () => {
   const [openMenu, setOpenMenu] = React.useState(false);
   const { Language, toggleLanguage } = useLanguageContext();
   const { darkMode, toggleTheme } = useThemeContext();
+
   const navigate = useNavigate();
   function handleNavigate(path: string) {
     navigate(path)
@@ -62,7 +64,9 @@ export const NavBar: React.FC = () => {
   }
   return (
     <React.Fragment>
-   
+      <Helmet>
+        <meta name="theme-color" content={darkMode ? darkTheme.palette.background.default : lightTheme.palette.background.default} />
+      </Helmet>
       <Container >
         <ContainerMenuItem >
           <CustomLink to="/" >
