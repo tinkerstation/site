@@ -9,7 +9,6 @@ import {
 const CustomContainer = styled(Grid)(({ theme }) => ({
     color: theme.palette.text.primary,
     background: theme.palette.background.default,
-    padding: theme.spacing(3, 0),
     minHeight: '100vh',
 }));
 

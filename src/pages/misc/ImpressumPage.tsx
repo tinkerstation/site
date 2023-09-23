@@ -7,7 +7,7 @@ const Impressum: React.FC = () => {
     const { Language } = useLanguageContext();
 
     return (
-        <Container component="main" maxWidth="md" style={{ padding: '20px' }} >
+        <Container component="main" maxWidth="md" style={{ padding: '100px 0px' }} >
             <Paper elevation={3} style={{ padding: '20px'  ,textAlign: "justify"}}>
                 <Typography variant="h3" gutterBottom>
                     {getTranslation(Language.code, 'impressum.title')}

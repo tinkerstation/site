@@ -13,19 +13,25 @@ const HomePage: React.FC = () => {
     const { Language } = useLanguageContext();
     return (
         <React.Fragment>
-            <div
+            {/* <div
                 style={{
                     backgroundImage: `url(${background})`,
                     backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'left',
                     backgroundSize: 'cover',
                     width: "100vw",
-                    height: "60vh",
+                    height: "100vh",
                 }}
             >
+            </div> */}
+            <div className="video-container">
+                <video autoPlay muted loop className="background-video">
+                    <source src={"/intro.mp4"} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                {/* Other content can go here */}
             </div>
-            <Container component="main" maxWidth="xl" style={{padding: "20px"}}>
-                <Typography variant="h1">{getTranslation(Language.code,"welcome")}</Typography>
+            <Container component="main" maxWidth="xl" style={{ padding: "20px" }}>
+                <Typography variant="h1">{getTranslation(Language.code, "welcome")}</Typography>
             </Container>
         </React.Fragment>
     );

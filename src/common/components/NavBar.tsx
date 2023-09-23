@@ -25,28 +25,30 @@ import { DarkMode, LightMode } from '@mui/icons-material';
 import { convertPathString } from '../index';
 import { Helmet } from 'react-helmet';
 import DensityMediumIcon from '@mui/icons-material/DensityMedium';
-const HamMenu = styled(DensityMediumIcon)(({ theme }) => ({
-  color: theme.palette.text.primary,
-}));
+
+
 
 const Container = styled(Grid)(({ theme }) => ({
   color: theme.palette.text.primary,
   padding: theme.spacing(1),
-  background: theme.palette.background.default,
+  background: "transparent",
   display: "flex",
   justifyContent: "space-around",
   position: "fixed",
   width: "100vw",
+  zIndex: "1000",
 }));
 
 const ContainerMenuItem = styled(Grid)(({ theme }) => ({
   display: "flex",
-  color: theme.palette.text.primary,
+  padding: theme.spacing(1,1),
 }));
+
 const CustomLink = styled(Link)(({ theme }) => ({
   display: "flex",
-  color: theme.palette.text.primary,
+  color: "white",
   textDecoration: "none",
+  padding: theme.spacing(1,1),
 }));
 
 export const NavBar: React.FC = () => {
@@ -80,7 +82,7 @@ export const NavBar: React.FC = () => {
               width: "max-content",
             }}
 
-          ><HamMenu /></Button>
+          ><DensityMediumIcon style={{color:"white"}} /></Button>
         </ContainerMenuItem>
       </Container>
       <Drawer
@@ -111,7 +113,7 @@ export const NavBar: React.FC = () => {
         <ListItem >
           <ListItemButton onClick={toggleTheme}>
             <ListItemIcon>
-              {darkMode ? <DarkMode /> : <LightMode  style={{color:"#ffd452"}}/>}
+              {darkMode ? <DarkMode /> : <LightMode style={{ color: "#ffd452" }} />}
             </ListItemIcon>
           </ListItemButton >
           <FormControl fullWidth >

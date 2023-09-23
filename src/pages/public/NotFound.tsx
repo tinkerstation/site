@@ -8,7 +8,7 @@ const NotFoundPage: React.FC = () => {
 
     return (
         <React.Fragment>
-            <Container component="main" maxWidth="md" style={{}}>
+            <Container component="main" maxWidth="md" style={{ padding: '100px 0px' }}>
                 <Paper elevation={3} style={{ 
                     padding: '20px',
                     minHeight:"40vh",
