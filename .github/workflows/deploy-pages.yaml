@@ -15,14 +15,11 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: "18"
           cache: yarn
 
       - name: Build website image
-        run: docker build -f Containerfile . -t mkdocs
-
-      - name: Generate website with mkdocs
-        run: docker run --rm  -v "$PWD:$PWD" -w "$PWD" mkdocs:latest build -v
+        run: yarn && yarn run build
 
       - name: Upload website artifacts 
         uses: actions/upload-pages-artifact@v1
