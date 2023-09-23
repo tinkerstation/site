@@ -70,7 +70,7 @@ export const NavBar: React.FC = () => {
       <Container >
         <ContainerMenuItem >
           <CustomLink to="/" >
-            <Typography variant="h2" sx={{ xs: "h4", sm: "h3", md: "h2", xl: "h1" }}>XenOrbit</Typography>
+            <Typography variant="h2" sx={{ xs: "h4", sm: "h3", md: "h2", xl: "h1" }}>XenOrBit</Typography>
           </CustomLink>
         </ContainerMenuItem>
         <ContainerMenuItem >
@@ -113,12 +113,9 @@ export const NavBar: React.FC = () => {
         <ListItem >
           <ListItemButton onClick={toggleTheme}>
             <ListItemIcon>
-              {darkMode ? <DarkMode /> : <LightMode />}
+              {darkMode ? <DarkMode /> : <LightMode  style={{color:"#ffd452"}}/>}
             </ListItemIcon>
-            <ListItemText primary={darkMode ? getTranslation(Language.code, "darkTheme") : getTranslation(Language.code, "lightTheme")} />
           </ListItemButton >
-        </ListItem>
-        <ListItem >
           <FormControl fullWidth >
             <InputLabel id="language-selector">{getTranslation(Language.code, "language")}</InputLabel>
             <Select

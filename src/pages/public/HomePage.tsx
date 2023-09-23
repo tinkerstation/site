@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
                 }}
             >
             </div>
-            <Container component="main" maxWidth="md" style={{padding: "20px"}}>
+            <Container component="main" maxWidth="xl" style={{padding: "20px"}}>
                 <Typography variant="h1">{getTranslation(Language.code,"welcome")}</Typography>
             </Container>
         </React.Fragment>
