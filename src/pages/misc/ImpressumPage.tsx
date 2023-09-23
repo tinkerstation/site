@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography, Paper } from '@mui/material';
-import { getTranslation } from '../../common';
+import { getTranslation } from '../../common/language';
 import { useLanguageContext } from '../../common/contexts/LangContext';
 
 const Impressum: React.FC = () => {
@@ -8,10 +8,10 @@ const Impressum: React.FC = () => {
 
     return (
         <Paper elevation={3} style={{ padding: '20px', textAlign: "justify" }}>
-            <Typography variant="h3" gutterBottom>
+            <Typography variant="h2" gutterBottom>
                 {getTranslation(Language.code, 'impressum.title')}
             </Typography>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h6" gutterBottom>
                 {getTranslation(Language.code, 'impressum.companyName')}
             </Typography>
             <Typography variant="h6" gutterBottom>

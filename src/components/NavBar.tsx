@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useThemeContext } from '../contexts/ThemeContext';
-import { useLanguageContext } from '../contexts/LangContext';
+import {  useNavigate } from 'react-router-dom';
+import { useThemeContext } from '../common/contexts/ThemeContext';
+import { useLanguageContext } from '../common/contexts/LangContext';
 import ConsentModal from './ConsentModal';
-import { darkTheme, getTranslation, languages, lightTheme } from '..';
+import { CustomLink, darkTheme, lightTheme } from '../common/theme';
+import {getTranslation, languages} from "../common/language";
 import {
   Button,
   Drawer,
@@ -22,7 +23,7 @@ import {
   Typography,
 } from '@mui/material';
 import { DarkMode, LightMode } from '@mui/icons-material';
-import { convertPathString } from '../index';
+import { convertPathString } from '../common/utils';
 import { Helmet } from 'react-helmet';
 import DensityMediumIcon from '@mui/icons-material/DensityMedium';
 import ClearIcon from '@mui/icons-material/Clear';
@@ -42,11 +43,7 @@ const ContainerMenuItem = styled(Grid)(({ theme }) => ({
   color: theme.palette.text.primary,
 }));
 
-const CustomLink = styled(Link)(({ theme }) => ({
-  display: "flex",
-  textDecoration: "none",
-  color: theme.palette.text.primary,
-}));
+
 
 interface NavBarProps {
   isHome?: boolean;

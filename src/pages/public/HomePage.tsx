@@ -3,9 +3,10 @@ import {
     Typography,
     Box
 } from '@mui/material';
-import { CustomContainer, getTranslation } from '../../common';
+import {  getTranslation } from '../../common/language';
 import { useLanguageContext } from '../../common/contexts/LangContext';
-import { NavBar } from '../../common/components/NavBar';
+import { NavBar } from '../../components/NavBar';
+import { CustomContainer } from '../../common/theme';
 
 const HomePage: React.FC = () => {
     const { Language } = useLanguageContext();

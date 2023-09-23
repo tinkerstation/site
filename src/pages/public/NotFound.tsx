@@ -12,6 +12,7 @@ const NotFoundPage: React.FC = () => {
                 minHeight: "50vh",
                 display: 'flex',
                 justifyContent: 'center',
+                alignItems: 'center'
             }} >
                 <Button onClickCapture={() => navigate("/")} style={{ color: "inherit" }} >go Home</Button>
             </Paper>

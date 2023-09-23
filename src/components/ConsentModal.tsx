@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { useConsentContext } from "../contexts/CookiesContext";
+import { useConsentContext } from "../common/contexts/CookiesContext";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { styled } from '@mui/material';
-import { useLanguageContext } from '../contexts/LangContext';
-import { getTranslation } from '..';
+import { useLanguageContext } from '../common/contexts/LangContext';
+import { getTranslation } from '../common/language';
 
 const CustomBox = styled(Box)(({ theme }) => ({
     color: theme.palette.text.primary,

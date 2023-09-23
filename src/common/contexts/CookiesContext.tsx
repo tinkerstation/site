@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
-import { LocalStorage } from '..';
+import { LocalStorage } from '../utils';
 
 type ConsentContextProviderProps = {
     children: ReactNode;

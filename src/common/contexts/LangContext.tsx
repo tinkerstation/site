@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
-import { LocalStorage , Language, languages } from '..';
+import { LocalStorage  } from '../utils';
+import { Language,languages } from '../language';
 
 type LanguageContextProviderProps = {
     children: ReactNode;

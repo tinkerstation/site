@@ -1,7 +1,7 @@
 import React from 'react';
-import { NavBar } from '../../common/components/NavBar';
+import { NavBar } from '../../components/NavBar';
 import { Outlet } from 'react-router-dom';
-import { CustomContainer } from '../../common';
+import { CustomContainer } from '../../common/theme';
 
 const PublicLayout: React.FC = () => {
     return (

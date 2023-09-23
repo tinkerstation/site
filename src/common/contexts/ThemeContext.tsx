@@ -1,7 +1,8 @@
 // src/ThemeContext.tsx
 import React, { ReactNode, createContext, useContext, useState } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
-import { darkTheme, lightTheme,LocalStorage } from '..';
+import { darkTheme, lightTheme } from '../theme';
+import { LocalStorage } from '../utils';
 
 type ThemeContextType = {
     darkMode: boolean;
