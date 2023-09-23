@@ -1,0 +1,17 @@
+{
+    "greeting": "Hello",
+    "welcome": "Welcome",
+    "farewell": "Goodbye",
+    "home": "Home",
+    "blogs": "Blogs",
+    "aboutUs": "About Us",
+    "ourServices": "Our Services",
+    "contactUs": "Contact Us",
+    "language": "Language",
+    "darkTheme": "Dark Theme",
+    "lightTheme": "Light Theme",
+    "english": "English",
+    "spanish": "Spanish",
+    "german": "German",
+    "french": "French"
+}
