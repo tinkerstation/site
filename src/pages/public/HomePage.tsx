@@ -12,7 +12,7 @@ const Container = styled(Grid)(({ theme }) => ({
     alignItems: "center",
     background: theme.palette.background.default,
     padding: theme.spacing(1),
-    
+
 }));
 
 const Item = styled(Grid)(({ theme }) => ({
@@ -38,7 +38,6 @@ const HomePage: React.FC = () => {
                 </Grid>
                 <Grid xs={4} sm={4} md={6}  >
                     <Item >
-
                         <Typography variant="h1">This is a Heading 1</Typography>
                         <Typography variant="h2">This is a Heading 2</Typography>
                     </Item>

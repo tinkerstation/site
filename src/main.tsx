@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <LanguageContextProvider>
     <ConsentContextProvider>
       <CustomThemeProvider>
-        <BrowserRouter basename="/xenorbit" >
+        <BrowserRouter basename="/" >
           <AppRouter />
         </BrowserRouter>
       </CustomThemeProvider>

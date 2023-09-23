@@ -15,7 +15,7 @@ import {
   Select,
   styled,
 } from '@mui/material';
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useThemeContext } from '../contexts/ThemeContext';
 import { useLanguageContext } from '../contexts/LangContext';
 import ConsentModal from './ConsentModal';
@@ -33,9 +33,10 @@ const Container = styled(Grid)(({ theme }) => ({
   color: theme.palette.text.primary,
   padding: theme.spacing(1),
   background: theme.palette.background.default,
-  borderRadius: "0px",
   display: "flex",
   justifyContent: "space-around",
+  position: "fixed",
+  width: "100vw",
 }));
 
 const ContainerMenuItem = styled(Grid)(({ theme }) => ({
@@ -48,7 +49,7 @@ export const NavBar: React.FC = () => {
   const { Language, toggleLanguage } = useLanguageContext();
   const { darkMode, toggleTheme } = useThemeContext();
   const navigate = useNavigate();
-  function handleNavigate(path:string){
+  function handleNavigate(path: string) {
     navigate(path)
     setOpenMenu(false)
   }
@@ -67,8 +68,8 @@ export const NavBar: React.FC = () => {
               color: "black",
               width: "max-content",
             }}
-            startIcon={<HamMenu />}
-          ></Button>
+
+          ><HamMenu /></Button>
         </ContainerMenuItem>
       </Container>
       <Drawer
@@ -76,10 +77,10 @@ export const NavBar: React.FC = () => {
         open={openMenu}
         onClose={() => setOpenMenu(!openMenu)}
       >
-          <List>
+        <List>
           {['home', 'blogs', 'aboutUs', 'ourServices', 'contactUs'].map((text, index) => (
             <ListItem key={index} disablePadding>
-              <ListItemButton onClick={()=> handleNavigate('/'+text)}>
+              <ListItemButton onClick={() => handleNavigate('/' + text)}>
                 <ListItemText primary={getTranslation(Language.code, text)} />
               </ListItemButton>
             </ListItem>
