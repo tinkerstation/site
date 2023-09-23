@@ -3,7 +3,6 @@ import {
     Typography,
     Container
 } from '@mui/material';
-import background from "/homedesign.jpg";
 import { getTranslation } from '../../common';
 import { useLanguageContext } from '../../common/contexts/LangContext';
 
