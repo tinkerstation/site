@@ -4,13 +4,11 @@ import {
     Grid
 } from '@mui/material';
 import { NavBar } from '../../common/components/NavBar';
-import background from "/stars.jpg";
+import background from "/homedesign.jpg";
 import { Outlet } from 'react-router-dom';
 
 
 const Container = styled(Grid)(({ theme }) => ({
-    ...theme.typography.body1,
-    padding: theme.spacing(1),
     color: theme.palette.text.primary,
     background: theme.palette.background.default,
     minHeight: "100vh",

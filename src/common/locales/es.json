@@ -13,5 +13,11 @@
     "english": "Inglés",
     "spanish": "Español",
     "german": "Alemán",
-    "french": "Francés"
+    "french": "Francés",
+    "cookieNotice": "Nosotros y terceros seleccionados utilizamos cookies u tecnologías similares con fines técnicos y, con su consentimiento, para funcionalidad, experiencia, medición y marketing (anuncios personalizados) según se especifica en la política de cookies. La denegación del consentimiento puede hacer que algunas funciones relacionadas no estén disponibles.",
+    "consentOptions": {
+      "instruction": "Puede dar, denegar o retirar su consentimiento en cualquier momento de forma libre.",
+      "acceptButton": "Aceptar",
+      "rejectButton": "Rechazar"
+    }
 }

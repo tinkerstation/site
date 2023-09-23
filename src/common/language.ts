@@ -24,11 +24,22 @@ export const languageDictionary: Record<string, any> = {
     // ... add more languages as needed
 };
 
-export function getTranslation(langCode: string, key: string): string {
+export function getTranslation(langCode: string, key: string) {
     const languageData = languageDictionary[langCode];
     if (!languageData) {
         console.warn(`No translations found for language code: ${langCode}`);
         return key;
     }
-    return languageData[key] || key;
+    // Split the key by dots to access nested properties
+    const keys = key.split('.');
+    let current = languageData;
+
+    for (const k of keys) {
+        current = current[k];
+        if (!current) {
+            console.warn(`No translation found for key: ${key}`);
+            return key;
+        }
+    }
+    return current;
 }

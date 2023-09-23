@@ -1,4 +1,9 @@
 import * as React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useThemeContext } from '../contexts/ThemeContext';
+import { useLanguageContext } from '../contexts/LangContext';
+import ConsentModal from './ConsentModal';
+import { getTranslation, languages } from '../language';
 import {
   Button,
   Drawer,
@@ -14,16 +19,10 @@ import {
   MenuItem,
   Select,
   styled,
+  Typography,
 } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
-import { useThemeContext } from '../contexts/ThemeContext';
-import { useLanguageContext } from '../contexts/LangContext';
-import ConsentModal from './ConsentModal';
-import { getTranslation, languages } from '../language';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { DarkMode, LightMode } from '@mui/icons-material';
-import viteLogo from '/vite.svg';
-
 
 const HamMenu = styled(GiHamburgerMenu)(({ theme }) => ({
   color: theme.palette.text.primary,
@@ -43,6 +42,11 @@ const ContainerMenuItem = styled(Grid)(({ theme }) => ({
   display: "flex",
   color: theme.palette.text.primary,
 }));
+const CustomLink = styled(Link)(({ theme }) => ({
+  display: "flex",
+  color: theme.palette.text.primary,
+  textDecoration: "none",
+}));
 
 export const NavBar: React.FC = () => {
   const [openMenu, setOpenMenu] = React.useState(false);
@@ -57,10 +61,12 @@ export const NavBar: React.FC = () => {
     <React.Fragment>
       <Container >
         <ContainerMenuItem >
-          <img src={viteLogo} className="logo react" alt="React logo" />
+          <CustomLink to="/" >
+            <Typography variant="h3" sx={{ xs: "h4", sm: "h3", md: "h2", xl: "h1" }}>XenOrbit</Typography>
+          </CustomLink>
         </ContainerMenuItem>
         <ContainerMenuItem >
-          <h1>center</h1>
+
         </ContainerMenuItem>
         <ContainerMenuItem >
           <Button onClick={() => setOpenMenu(!openMenu)}
@@ -68,7 +74,6 @@ export const NavBar: React.FC = () => {
               color: "black",
               width: "max-content",
             }}
-
           ><HamMenu /></Button>
         </ContainerMenuItem>
       </Container>

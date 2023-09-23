@@ -13,5 +13,11 @@
     "english": "English",
     "spanish": "Spanish",
     "german": "German",
-    "french": "French"
+    "french": "French",
+    "cookieNotice": "We and selected third parties use cookies or similar technologies for technical purposes and, with your consent, for functionality, experience, measurement, and marketing (personalized ads) as specified in the cookie policy. Denying consent may make related features unavailable.",
+    "consentOptions": {
+      "instruction": "You can freely give, deny, or withdraw your consent at any time.",
+      "acceptButton": "Accept",
+      "rejectButton": "Reject"
+    }
 }

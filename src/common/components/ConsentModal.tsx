@@ -4,21 +4,20 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import { styled } from '@mui/material';
+import { useLanguageContext } from '../contexts/LangContext';
+import { getTranslation } from '../language';
 
-const style = {
-    position: 'absolute' as 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-};
+const CustomBox = styled(Box)(({ theme }) => ({
+    color: theme.palette.text.primary,
+    background: theme.palette.background.default,
+    textAlign: "justify",
+    padding: "15px 15px",
+}));
 
 const ConsentModal: React.FC = () => {
     const { Consent, toggleConsent } = useConsentContext();
+    const { Language } = useLanguageContext();
 
     return (
         <React.Fragment>
@@ -26,26 +25,34 @@ const ConsentModal: React.FC = () => {
                 open={!Consent}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
+                style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyItems: "center",
+                    padding: "10vh 10vw",
+                }}
             >
-                <Box sx={style}>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
-                        We and selected third parties use cookies or similar technologies for technical purposes and, with your consent, for functionality,
-                        experience, measurement and marketing (personalized ads) as specified in the cookie policy. Denying consent may make related features unavailable.
+                <CustomBox>
+                    <Typography  >
+                        {getTranslation(Language.code, "cookieNotice")}
                     </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        You can freely give, deny, or withdraw your consent at any time.
-                        Use the “Accept” button to consent. Use the “Reject” button to continue without accepting.
+                    <Typography sx={{ mt: 2 }}>
+                        {getTranslation(Language.code, "consentOptions.instruction")}
                     </Typography>
-                    <Button variant="contained" color="primary" onClick={() => toggleConsent("deny")}>
-                        Reject
-                    </Button>
-                    <Button variant="contained" color="primary" onClick={() => toggleConsent("allow")}>
-                        Accept
-                    </Button>
-
-                </Box>
+                    <div style={{
+                        display: "flex",
+                        gap: "10px",
+                        padding: "15px 0",
+                    }}>
+                        <Button variant="outlined" color="primary" onClick={() => toggleConsent("deny")}>
+                            {getTranslation(Language.code, "consentOptions.rejectButton")}
+                        </Button>
+                        <Button variant="outlined" color="primary" onClick={() => toggleConsent("allow")}>
+                            {getTranslation(Language.code, "consentOptions.acceptButton")}
+                        </Button>
+                    </div>
+                </CustomBox>
             </Modal>
-
         </React.Fragment>
     );
 };
