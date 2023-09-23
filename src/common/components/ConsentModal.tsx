@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { styled } from '@mui/material';
 import { useLanguageContext } from '../contexts/LangContext';
-import { getTranslation } from '../language';
+import { getTranslation } from '..';
 
 const CustomBox = styled(Box)(({ theme }) => ({
     color: theme.palette.text.primary,

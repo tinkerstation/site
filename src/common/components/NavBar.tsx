@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useThemeContext } from '../contexts/ThemeContext';
 import { useLanguageContext } from '../contexts/LangContext';
 import ConsentModal from './ConsentModal';
-import { getTranslation, languages } from '../language';
+import { getTranslation, languages } from '..';
 import {
   Button,
   Drawer,
@@ -23,9 +23,11 @@ import {
 } from '@mui/material';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { DarkMode, LightMode } from '@mui/icons-material';
+import { convertPathString } from '../index';
 
 const HamMenu = styled(GiHamburgerMenu)(({ theme }) => ({
   color: theme.palette.text.primary,
+  fontSize: theme.typography.body2.fontSize,
 }));
 
 const Container = styled(Grid)(({ theme }) => ({
@@ -36,6 +38,7 @@ const Container = styled(Grid)(({ theme }) => ({
   justifyContent: "space-around",
   position: "fixed",
   width: "100vw",
+
 }));
 
 const ContainerMenuItem = styled(Grid)(({ theme }) => ({
@@ -59,10 +62,11 @@ export const NavBar: React.FC = () => {
   }
   return (
     <React.Fragment>
+   
       <Container >
         <ContainerMenuItem >
           <CustomLink to="/" >
-            <Typography variant="h3" sx={{ xs: "h4", sm: "h3", md: "h2", xl: "h1" }}>XenOrbit</Typography>
+            <Typography variant="h2" sx={{ xs: "h4", sm: "h3", md: "h2", xl: "h1" }}>XenOrbit</Typography>
           </CustomLink>
         </ContainerMenuItem>
         <ContainerMenuItem >
@@ -83,9 +87,19 @@ export const NavBar: React.FC = () => {
         onClose={() => setOpenMenu(!openMenu)}
       >
         <List>
-          {['home', 'blogs', 'aboutUs', 'ourServices', 'contactUs'].map((text, index) => (
+          {['pages.home', 'pages.blogs', 'pages.aboutUs', 'pages.ourServices', 'pages.contactUs'].map((text, index) => (
             <ListItem key={index} disablePadding>
-              <ListItemButton onClick={() => handleNavigate('/' + text)}>
+              <ListItemButton onClick={() => handleNavigate('/' + convertPathString(text))}>
+                <ListItemText primary={getTranslation(Language.code, text)} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+        <List>
+          {['pages.termsOfUse', 'pages.privacyPolicy', 'pages.impressum'].map((text, index) => (
+            <ListItem key={index} disablePadding>
+              <ListItemButton onClick={() => handleNavigate('/' + convertPathString(text))}>
                 <ListItemText primary={getTranslation(Language.code, text)} />
               </ListItemButton>
             </ListItem>

@@ -1,33 +1,44 @@
-import React from "react";
+import React from 'react';
+import { Container, Typography, Paper } from '@mui/material';
+import { getTranslation } from '../../common';
+import { useLanguageContext } from '../../common/contexts/LangContext';
 
-const ImpressumPage: React.FC = () => {
+const Impressum: React.FC = () => {
+    const { Language } = useLanguageContext();
 
     return (
-        <React.Fragment>
-            <main>
-                <div >
-                    <h1 >Impressum</h1>
-                    <h2>Information regarding the company</h2>
-                    <br />
-                    <p>SMR GROUP Spółka z ograniczoną odpowiedzialnością</p>
-                    <br />
-                    <p>NIP:5833418714</p>
-                    <br />
-                    <h2>Contact:</h2>
-                    <br />
-                    <p>ul. J. Heweliusza 11/811 80-890 Gdańsk</p><br />
-                    <p>Telefon: +49 176 9313 0340</p><br />
-                    E-Mail:<a href="mailto:contact@algoraid.com?subject=Request%20For%20Information">contact@algoraid.com</a><br /><br />
-                    <h2>Disclaimer</h2><br />
-                    <p>The information provided on this website is for informational purposes only. The information is not intended to be a substitute for professional advice.</p><br />
-                    <h2>Copyright</h2><br />
-                    <p>All content on this website is the intellectual property of Techonomy Labs. The content is protected by copyright and other laws.</p><br />
-                    <h2>Trademarks</h2><br />
-                    <p>The following trademarks are used on this website:</p><br /><h3><strong> Algoraid &trade;</strong></h3><br />
-                </div>
-            </main>
-        </React.Fragment>
+        <Container component="main" maxWidth="md" >
+            <Paper elevation={3} style={{ padding: '20px' }}>
+                <Typography variant="h4" gutterBottom>
+                    {getTranslation(Language.code, 'impressum.title')}
+                </Typography>
+                <Typography variant="h6" gutterBottom>
+                    {getTranslation(Language.code, 'impressum.companyName')}
+                </Typography>
+                <Typography variant="body1" gutterBottom>
+                    {getTranslation(Language.code, 'impressum.address')}
+                </Typography>
+                <Typography variant="body1" gutterBottom>
+                    {getTranslation(Language.code, 'impressum.phone')}
+                </Typography>
+                <Typography variant="body1" gutterBottom>
+                    {getTranslation(Language.code, 'impressum.email')}
+                </Typography>
+                <Typography variant="body1" gutterBottom>
+                    {getTranslation(Language.code, 'impressum.managingDirector')}
+                </Typography>
+                <Typography variant="body1" gutterBottom>
+                    {getTranslation(Language.code, 'impressum.commercialRegister')}
+                </Typography>
+                <Typography variant="body1" gutterBottom>
+                    {getTranslation(Language.code, 'impressum.vatId')}
+                </Typography>
+                <Typography variant="body1" gutterBottom>
+                    {getTranslation(Language.code, 'impressum.responsibleContent')}
+                </Typography>
+            </Paper>
+        </Container>
     );
-};
+}
 
-export default ImpressumPage;
+export default Impressum;

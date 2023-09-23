@@ -1,11 +1,11 @@
-import React, { lazy } from 'react';
+import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import PublicLayout from './public/PublicLayout';
 import NotFoundPage from './public/NotFound';
-const HomePage = lazy(() => import("./public/HomePage"));
-const ImpressumPage = lazy(() => import('./misc/ImpressumPage'));
-const PrivacyPage = lazy(() => import('./misc/PrivacyPage'));
-const TermsPage = lazy(() => import('./misc/TermsPage'));
+import HomePage from "./public/HomePage";
+import ImpressumPage from './misc/ImpressumPage'
+import PrivacyPage from './misc/PrivacyPage'
+import TermsPage from './misc/TermsPage'
 
 export const AppRouter = () => {
 
@@ -15,7 +15,7 @@ export const AppRouter = () => {
                 <Route element={<PublicLayout />}>
                     <Route path="/home" element={<HomePage />} />
                     <Route path="/impressum" element={<ImpressumPage />} />
-                    <Route path="/terms-and-conditions" element={<TermsPage />} />
+                    <Route path="/terms-of-use" element={<TermsPage />} />
                     <Route path="/privacy-policy" element={<PrivacyPage />} />
                     <Route path="/" element={<HomePage />} />
                     <Route path="*" element={<NotFoundPage />} />
