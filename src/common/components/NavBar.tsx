@@ -25,33 +25,34 @@ import { DarkMode, LightMode } from '@mui/icons-material';
 import { convertPathString } from '../index';
 import { Helmet } from 'react-helmet';
 import DensityMediumIcon from '@mui/icons-material/DensityMedium';
-
-
+import ClearIcon from '@mui/icons-material/Clear';
 
 const Container = styled(Grid)(({ theme }) => ({
-  color: theme.palette.text.primary,
-  padding: theme.spacing(1),
-  background: "transparent",
+  padding: theme.spacing(2),
+  background: "inherit",
   display: "flex",
-  justifyContent: "space-around",
-  position: "fixed",
+  justifyContent: "space-between",
+  position:"absolute",
   width: "100vw",
-  zIndex: "1000",
+  zIndex: "110",
 }));
 
 const ContainerMenuItem = styled(Grid)(({ theme }) => ({
   display: "flex",
-  padding: theme.spacing(1,1),
+  color: theme.palette.text.primary,
 }));
 
 const CustomLink = styled(Link)(({ theme }) => ({
   display: "flex",
-  color: "white",
   textDecoration: "none",
-  padding: theme.spacing(1,1),
+  color: theme.palette.text.primary,
 }));
 
-export const NavBar: React.FC = () => {
+interface NavBarProps {
+  isHome?: boolean;
+}
+
+export const NavBar: React.FC<NavBarProps> = ({isHome}) => {
   const [openMenu, setOpenMenu] = React.useState(false);
   const { Language, toggleLanguage } = useLanguageContext();
   const { darkMode, toggleTheme } = useThemeContext();
@@ -69,20 +70,12 @@ export const NavBar: React.FC = () => {
       <Container >
         <ContainerMenuItem >
           <CustomLink to="/" >
-            <Typography variant="h2" sx={{ xs: "h4", sm: "h3", md: "h2", xl: "h1" }}>XenOrBit</Typography>
+            <Typography variant="h2" style={{ color: isHome ? "white":"inherit" }}>XenOrBit</Typography>
           </CustomLink>
         </ContainerMenuItem>
-        <ContainerMenuItem >
 
-        </ContainerMenuItem>
         <ContainerMenuItem >
-          <Button onClick={() => setOpenMenu(!openMenu)}
-            style={{
-              color: "black",
-              width: "max-content",
-            }}
-
-          ><DensityMediumIcon style={{color:"white"}} /></Button>
+          <Button onClick={() => setOpenMenu(!openMenu)} style={{ color: isHome ? "white":"inherit" }}><DensityMediumIcon /></Button>
         </ContainerMenuItem>
       </Container>
       <Drawer
@@ -90,6 +83,14 @@ export const NavBar: React.FC = () => {
         open={openMenu}
         onClose={() => setOpenMenu(!openMenu)}
       >
+        <ListItem disablePadding >
+          <ListItemButton onClick={()=>setOpenMenu(!openMenu)}>
+            <ListItemIcon>
+              <ClearIcon/>
+            </ListItemIcon>
+          </ListItemButton >
+        </ListItem>
+        <Divider />
         <List>
           {['pages.home', 'pages.blogs', 'pages.aboutUs', 'pages.ourServices', 'pages.contactUs'].map((text, index) => (
             <ListItem key={index} disablePadding>

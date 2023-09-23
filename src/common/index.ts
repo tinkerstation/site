@@ -3,6 +3,10 @@ import en from './locales/en.json';
 import fr from './locales/fr.json';
 import es from './locales/es.json';
 import de from './locales/de.json';
+import {
+  Grid,
+  styled
+} from '@mui/material';
 
 export const lightTheme = createTheme({
   palette: {
@@ -11,7 +15,7 @@ export const lightTheme = createTheme({
       default: "#ffffff",
     },
     primary: {
-      main: '#3f50b5',
+      main: '#3f2b96',
     },
     secondary: {
       main: '#f44336',
@@ -46,7 +50,7 @@ export const darkTheme = createTheme({
       default: "#121212",
     },
     primary: {
-      main: '#bb86fc', // Example color for dark theme
+      main: '#3f2b96', // Example color for dark theme
     },
     secondary: {
       main: '#03dac6', // Example color for dark theme
@@ -86,7 +90,7 @@ export function convertPathString(str: string): string {
 export const LocalStorage = {
     get(key: string): string | null {
         const item = localStorage.getItem(key);
-        console.log("get",key)
+        // console.log("get",key)
         if (item) {
             return JSON.parse(item) as string;
         }
@@ -94,19 +98,19 @@ export const LocalStorage = {
     },
     getBool(key: string): boolean | null {
         const item = localStorage.getItem(key);
-        console.log("getBool:",key)
+        // console.log("getBool:",key)
         if (item) {
-            console.log("Leave getBool",JSON.parse(item))
+            // console.log("Leave getBool",JSON.parse(item))
             return JSON.parse(item) as boolean;
         }
         return null;
     },
     setBool(key: string, value: boolean) {
-        console.log("setBool:",key,value)
+        // console.log("setBool:",key,value)
         localStorage.setItem(key, JSON.stringify(value));
     },
     set(key: string, value: string) {
-        console.log("set",key,value)
+        // console.log("set",key,value)
         localStorage.setItem(key, JSON.stringify(value));
     },
     remove(key: string) {
@@ -154,3 +158,13 @@ export function getTranslation(langCode: string, key: string) {
     }
     return current;
 }
+
+export const CustomContainer = styled(Grid)(({ theme }) => ({
+  color: theme.palette.text.primary,
+  background: theme.palette.background.default,
+  minHeight: '100vh',
+  padding: theme.spacing(10,20),
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(10,3),
+  },
+}));

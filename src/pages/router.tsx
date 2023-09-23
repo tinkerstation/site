@@ -12,12 +12,12 @@ export const AppRouter = () => {
     return (
         <React.Fragment>
             <Routes >
+                <Route path="/home" element={<HomePage />} />
+                <Route path="/" element={<HomePage />} />
                 <Route element={<PublicLayout />}>
-                    <Route path="/home" element={<HomePage />} />
                     <Route path="/impressum" element={<ImpressumPage />} />
                     <Route path="/terms-of-use" element={<TermsPage />} />
                     <Route path="/privacy-policy" element={<PrivacyPage />} />
-                    <Route path="/" element={<HomePage />} />
                     <Route path="*" element={<NotFoundPage />} />
                 </Route>
             </Routes>

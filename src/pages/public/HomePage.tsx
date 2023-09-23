@@ -1,37 +1,26 @@
 import React from 'react';
 import {
     Typography,
-    Container
+    Box
 } from '@mui/material';
-import { getTranslation } from '../../common';
+import { CustomContainer, getTranslation } from '../../common';
 import { useLanguageContext } from '../../common/contexts/LangContext';
-
-
+import { NavBar } from '../../common/components/NavBar';
 
 const HomePage: React.FC = () => {
     const { Language } = useLanguageContext();
     return (
         <React.Fragment>
-            {/* <div
-                style={{
-                    backgroundImage: `url(${background})`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover',
-                    width: "100vw",
-                    height: "100vh",
-                }}
-            >
-            </div> */}
-            <div className="video-container">
-                <video autoPlay muted loop className="background-video">
+            <NavBar isHome />
+            <Box className="video-container">
+                <video autoPlay muted loop playsInline className="background-video">
                     <source src={"/intro.mp4"} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
-                {/* Other content can go here */}
-            </div>
-            <Container component="main" maxWidth="xl" style={{ padding: "20px" }}>
+            </Box>
+            <CustomContainer>
                 <Typography variant="h1">{getTranslation(Language.code, "welcome")}</Typography>
-            </Container>
+            </CustomContainer>
         </React.Fragment>
     );
 };
