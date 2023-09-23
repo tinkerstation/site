@@ -9,8 +9,8 @@ const PrivacyPolicy: React.FC = () => {
 
   return (
     <Container component="main" maxWidth="md" style={{ padding: '20px' }}>
-      <Paper elevation={3} style={{ padding: '20px' }}>
-        <Typography variant="h4" gutterBottom>
+      <Paper elevation={3} style={{ padding: '20px' ,textAlign: "justify"}}>
+        <Typography variant="h3" gutterBottom>
           {getTranslation(Language.code, 'privacyPolicy.title')}
         </Typography>
 

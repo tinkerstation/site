@@ -8,29 +8,29 @@ const Impressum: React.FC = () => {
 
     return (
         <Container component="main" maxWidth="md" style={{ padding: '20px' }} >
-            <Paper elevation={3} style={{ padding: '20px' }}>
-                <Typography variant="h4" gutterBottom>
+            <Paper elevation={3} style={{ padding: '20px'  ,textAlign: "justify"}}>
+                <Typography variant="h3" gutterBottom>
                     {getTranslation(Language.code, 'impressum.title')}
                 </Typography>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h5" gutterBottom>
                     {getTranslation(Language.code, 'impressum.companyName')}
                 </Typography>
-                <Typography variant="body1" gutterBottom>
+                <Typography variant="h6" gutterBottom>
                     {getTranslation(Language.code, 'impressum.address')}
                 </Typography>
-                <Typography variant="body1" gutterBottom>
+                <Typography variant="h6" gutterBottom>
                     {getTranslation(Language.code, 'impressum.phone')}
                 </Typography>
-                <Typography variant="body1" gutterBottom>
+                <Typography variant="h6" gutterBottom>
                     {getTranslation(Language.code, 'impressum.email')}
                 </Typography>
-                <Typography variant="body1" gutterBottom>
+                <Typography variant="h6" gutterBottom>
                     {getTranslation(Language.code, 'impressum.managingDirector')}
                 </Typography>
-                <Typography variant="body1" gutterBottom>
+                <Typography variant="h6" gutterBottom>
                     {getTranslation(Language.code, 'impressum.commercialRegister')}
                 </Typography>
-                <Typography variant="body1" gutterBottom>
+                <Typography variant="h6" gutterBottom>
                     {getTranslation(Language.code, 'impressum.vatId')}
                 </Typography>
                 <Typography variant="body1" gutterBottom>

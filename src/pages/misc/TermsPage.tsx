@@ -9,8 +9,8 @@ const TermsAndConditions: React.FC = () => {
 
     return (
         <Container component="main" maxWidth="md" style={{ padding: '20px' }}>
-            <Paper elevation={3} style={{ padding: '20px' }}>
-                <Typography variant="h4" gutterBottom>
+            <Paper elevation={3} style={{ padding: '20px'  ,textAlign: "justify"}}>
+                <Typography variant="h3" gutterBottom>
                     {getTranslation(Language.code, 'termsAndConditions.title')}
                 </Typography>
                 <Typography variant="h6" gutterBottom>
@@ -58,10 +58,10 @@ const TermsAndConditions: React.FC = () => {
                 <Typography variant="h6" gutterBottom>
                     {getTranslation(Language.code, 'termsAndConditions.governingLaw')}
                 </Typography>
-                <Typography variant="body1" gutterBottom>
+                <Typography variant="h6" gutterBottom>
                     {getTranslation(Language.code, 'termsAndConditions.contactUs')}
                 </Typography>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="body1" gutterBottom>
                     {getTranslation(Language.code, 'termsAndConditions.contactUsText')}
                 </Typography>
             </Paper>

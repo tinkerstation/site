@@ -21,14 +21,12 @@ import {
   styled,
   Typography,
 } from '@mui/material';
-import { GiHamburgerMenu } from "react-icons/gi";
 import { DarkMode, LightMode } from '@mui/icons-material';
 import { convertPathString } from '../index';
 import { Helmet } from 'react-helmet';
-
-const HamMenu = styled(GiHamburgerMenu)(({ theme }) => ({
+import DensityMediumIcon from '@mui/icons-material/DensityMedium';
+const HamMenu = styled(DensityMediumIcon)(({ theme }) => ({
   color: theme.palette.text.primary,
-  fontSize: theme.typography.body2.fontSize,
 }));
 
 const Container = styled(Grid)(({ theme }) => ({
@@ -39,7 +37,6 @@ const Container = styled(Grid)(({ theme }) => ({
   justifyContent: "space-around",
   position: "fixed",
   width: "100vw",
-
 }));
 
 const ContainerMenuItem = styled(Grid)(({ theme }) => ({
@@ -82,6 +79,7 @@ export const NavBar: React.FC = () => {
               color: "black",
               width: "max-content",
             }}
+
           ><HamMenu /></Button>
         </ContainerMenuItem>
       </Container>

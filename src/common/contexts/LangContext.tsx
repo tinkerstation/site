@@ -5,7 +5,6 @@ type LanguageContextProviderProps = {
     children: ReactNode;
 }
 
-
 type LanguageContextType = {
     Language: Language;
     toggleLanguage: (LanguageCode: string) => void;
