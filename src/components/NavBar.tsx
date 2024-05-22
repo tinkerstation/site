@@ -49,7 +49,7 @@ interface NavBarProps {
   isHome?: boolean;
 }
 
-export const NavBar: React.FC<NavBarProps> = ({isHome}) => {
+export const NavBar: React.FC<NavBarProps> = ({}) => {
   const [openMenu, setOpenMenu] = React.useState(false);
   const { Language, toggleLanguage } = useLanguageContext();
   const { darkMode, toggleTheme } = useThemeContext();
