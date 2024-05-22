@@ -13,6 +13,9 @@ const HomePage: React.FC = () => {
     return (
         <React.Fragment>
             <NavBar isHome />
+            <Box className="background-logo">
+            <img src={"/logo.png"} />
+            </Box>
             <Box className="video-container">
                 <video autoPlay muted loop playsInline className="background-video">
                     <source src={"/intro.mp4"} type="video/mp4" />

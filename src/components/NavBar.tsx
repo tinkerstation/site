@@ -67,12 +67,12 @@ export const NavBar: React.FC<NavBarProps> = ({isHome}) => {
       <Container >
         <ContainerMenuItem >
           <CustomLink to="/" >
-            <Typography variant="h2" style={{ color: isHome ? "white":"inherit" }}>XenOrBit</Typography>
+            <Typography variant="h2" style={{ color: "inherit" }}>TinkerStation</Typography>
           </CustomLink>
         </ContainerMenuItem>
 
         <ContainerMenuItem >
-          <Button onClick={() => setOpenMenu(!openMenu)} style={{ color: isHome ? "white":"inherit" }}><DensityMediumIcon /></Button>
+          <Button onClick={() => setOpenMenu(!openMenu)} style={{ color: "inherit" }}><DensityMediumIcon /></Button>
         </ContainerMenuItem>
       </Container>
       <Drawer
